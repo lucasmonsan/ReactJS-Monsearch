@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { GoogleIcon, DuckDuckGoIcon, BingIcon } from "./assets/icons/Icons"
 
 function App() {
-  const [chosen, setChosen] = useState("google")
+  const [chosen, setChosen] = useState("duck")
   const [input, setInput] = useState("")
 
   const handleKeyDown = (event) => {
@@ -16,7 +16,7 @@ function App() {
         window.open("https://bing.com/search?q=" + words.join("+"), "_self")
       } else {
         window.open(
-          "https://duckduckgo.com/search?q=" + words.join("+"),
+          "https://duckduckgo.com/?t=h_&q=" + words.join("+"),
           "_self"
         )
       }
@@ -24,6 +24,8 @@ function App() {
   }
 
   useEffect(() => {
+    document.getElementById("Video").playbackRate = 0.75
+
     const Google = document.getElementById("Google")
     const Bing = document.getElementById("Bing")
     const Duck = document.getElementById("Duck")
@@ -57,6 +59,16 @@ function App() {
 
   return (
     <div>
+      <video
+        id="Video"
+        preload="auto"
+        autoPlay
+        loop
+        muted
+        type="video/webm"
+        src="https://firebasestorage.googleapis.com/v0/b/monsan-dev.appspot.com/o/LabeX%2FLabeX.webm?alt=media&token=8dd5abfb-0caa-46e4-aa59-e586de98ed77"
+      />
+
       <section id="Selector">
         <GoogleIcon setChosen={setChosen} />
         <DuckDuckGoIcon setChosen={setChosen} />
@@ -72,6 +84,10 @@ function App() {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown} // Add event listener for keydown event
       />
+
+      <a href="https://lucasmonsan.com.br">
+        Criado por: <strong>Lucas Monsan</strong>
+      </a>
     </div>
   )
 }

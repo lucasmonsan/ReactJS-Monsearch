@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 main {
@@ -11,12 +14,17 @@ main {
   width: 100%;
   min-height: 100dvh;
   max-height: 100dvh;
-  background: rgb(0, 6, 38);
-  background: radial-gradient(
-    circle,
-    rgba(0, 6, 38, 1) 0%,
-    rgba(55, 14, 66, 1) 100%
-  );
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+video {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 div {
@@ -31,6 +39,7 @@ section {
   position: relative;
   width: 180px;
   height: 180px;
+  margin-top: -4rem;
   padding: 5rem;
   transition: all 0.25s ease-in-out;
 }
@@ -72,5 +81,15 @@ input {
   font-size: min(8vw, 8em);
   border: none;
   background-color: transparent;
+  color: white;
+}
+
+a {
+  opacity: 0.85;
+  position: fixed;
+  bottom: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.85em;
   color: white;
 }
