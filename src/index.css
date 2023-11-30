@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  background: rgb(0, 6, 38);
+  background: radial-gradient(
+    circle,
+    rgba(0, 6, 38, 1) 0%,
+    rgba(55, 14, 66, 1) 100%
+  );
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+section {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  padding: 5rem;
+  transition: all 0.25s ease-in-out;
+}
+
+section:hover {
+  width: 360px;
+}
+
+section:hover #Google {
+  opacity: 1 !important;
+  transform: translateX(-120px) scale(0.75);
+}
+section:hover #Bing {
+  opacity: 1 !important;
+  transform: translateX(120px) scale(0.75);
+}
+section:hover #Duck {
+  opacity: 1 !important;
+  transform: scale(0.75);
+}
+
+svg {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.25s ease-in-out;
+}
+
+input {
+  outline: none;
+  width: 98vw;
+  height: 25rem;
+  text-align: center;
+  font-size: min(8vw, 8em);
+  border: none;
+  background-color: transparent;
+  color: white;
+}
