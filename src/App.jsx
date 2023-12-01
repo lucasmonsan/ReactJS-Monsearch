@@ -11,27 +11,36 @@ function App() {
   const [chosen, setChosen] = useState("duck")
   const [input, setInput] = useState("")
 
-  const handleKeyDown = (event) => {
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-      const words = input.split(" ")
+      if (input !== "") {
+        const words = input.split(" ")
 
-      if (chosen === "google") {
-        window.open("https://google.com/search?q=" + words.join("+"), "_self")
-      } else if (chosen === "bing") {
-        window.open("https://bing.com/search?q=" + words.join("+"), "_self")
-      } else if (chosen === "duck") {
-        window.open(
-          "https://duckduckgo.com/?t=h_&q=" + words.join("+"),
-          "_self"
-        )
-      } else if (chosen === "youtube") {
-        window.open(
-          "https://www.youtube.com/results?search_query=" + words.join("+"),
-          "_self"
-        )
+        if (chosen === "google") {
+          window.open("https://google.com/search?q=" + words.join("+"), "_self")
+        } else if (chosen === "bing") {
+          window.open("https://bing.com/search?q=" + words.join("+"), "_self")
+        } else if (chosen === "duck") {
+          window.open(
+            "https://duckduckgo.com/?t=h_&q=" + words.join("+"),
+            "_self"
+          )
+        } else if (chosen === "youtube") {
+          window.open(
+            "https://www.youtube.com/results?search_query=" + words.join("+"),
+            "_self"
+          )
+        }
+      } else {
+        document.getElementById("Search").focus()
+        document.getElementById("Search").className = "shake"
+
+        setTimeout(() => {
+          document.getElementById("Search").className = ""
+        }, 500)
       }
     }
-  }
+  })
 
   useEffect(() => {
     document.getElementById("Video").playbackRate = 0.75
@@ -110,7 +119,6 @@ function App() {
         placeholder="Pesquisar"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={handleKeyDown}
       />
 
       <a href="https://lucasmonsan.com.br">

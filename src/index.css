@@ -97,3 +97,28 @@ a {
   font-size: 0.85em;
   color: white;
 }
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-10px, 0);
+  }
+  20% {
+    transform: translate(10px, 0);
+  }
+  30% {
+    transform: translate(-10px, 0);
+  }
+  40% {
+    transform: translate(10px, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
