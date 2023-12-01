@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 
-import { GoogleIcon, DuckDuckGoIcon, BingIcon } from "./assets/icons/Icons"
+import {
+  GoogleIcon,
+  DuckDuckGoIcon,
+  BingIcon,
+  YoutubeIcon,
+} from "./assets/icons/Icons"
 
 function App() {
   const [chosen, setChosen] = useState("duck")
@@ -14,9 +19,14 @@ function App() {
         window.open("https://google.com/search?q=" + words.join("+"), "_self")
       } else if (chosen === "bing") {
         window.open("https://bing.com/search?q=" + words.join("+"), "_self")
-      } else {
+      } else if (chosen === "duck") {
         window.open(
           "https://duckduckgo.com/?t=h_&q=" + words.join("+"),
+          "_self"
+        )
+      } else if (chosen === "youtube") {
+        window.open(
+          "https://www.youtube.com/results?search_query=" + words.join("+"),
           "_self"
         )
       }
@@ -29,33 +39,50 @@ function App() {
     const Google = document.getElementById("Google")
     const Bing = document.getElementById("Bing")
     const Duck = document.getElementById("Duck")
+    const Youtube = document.getElementById("Youtube")
 
     if (chosen === "google") {
       Google.style.fill = "#FFFFFF"
       Bing.style.fill = "#FFFFFF75"
       Duck.style.fill = "#FFFFFF75"
+      Youtube.style.fill = "#FFFFFF75"
 
       Google.style.opacity = "1"
       Bing.style.opacity = "0"
       Duck.style.opacity = "0"
+      Youtube.style.opacity = "0"
     } else if (chosen === "bing") {
       Bing.style.fill = "#FFFFFF"
       Google.style.fill = "#FFFFFF75"
       Duck.style.fill = "#FFFFFF75"
+      Youtube.style.fill = "#FFFFFF75"
 
       Bing.style.opacity = "1"
       Google.style.opacity = "0"
       Duck.style.opacity = "0"
-    } else {
+      Youtube.style.opacity = "0"
+    } else if (chosen === "duck") {
       Duck.style.fill = "#FFFFFF"
       Google.style.fill = "#FFFFFF75"
       Bing.style.fill = "#FFFFFF75"
+      Youtube.style.fill = "#FFFFFF75"
 
       Duck.style.opacity = "1"
       Bing.style.opacity = "0"
       Google.style.opacity = "0"
+      Youtube.style.opacity = "0"
+    } else if (chosen === "youtube") {
+      Youtube.style.fill = "#FFFFFF"
+      Duck.style.fill = "#FFFFFF75"
+      Google.style.fill = "#FFFFFF75"
+      Bing.style.fill = "#FFFFFF75"
+
+      Youtube.style.opacity = "1"
+      Duck.style.opacity = "0"
+      Bing.style.opacity = "0"
+      Google.style.opacity = "0"
     }
-  }, [chosen]) // Adding `currentHour` to the dependencies array to update the gradient on time change
+  }, [chosen])
 
   return (
     <div>
@@ -73,6 +100,7 @@ function App() {
         <GoogleIcon setChosen={setChosen} />
         <DuckDuckGoIcon setChosen={setChosen} />
         <BingIcon setChosen={setChosen} />
+        <YoutubeIcon setChosen={setChosen} />
       </section>
 
       <input
@@ -82,7 +110,7 @@ function App() {
         placeholder="Pesquisar"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={handleKeyDown} // Add event listener for keydown event
+        onKeyDown={handleKeyDown}
       />
 
       <a href="https://lucasmonsan.com.br">

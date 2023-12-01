@@ -45,20 +45,24 @@ section {
 }
 
 section:hover {
-  width: 360px;
+  width: 540px;
 }
 
 section:hover #Google {
   opacity: 1 !important;
-  transform: translateX(-120px) scale(0.75);
+  transform: translateX(-240px) scale(0.75);
 }
 section:hover #Bing {
   opacity: 1 !important;
-  transform: translateX(120px) scale(0.75);
+  transform: translateX(-80px) scale(0.75);
 }
 section:hover #Duck {
   opacity: 1 !important;
-  transform: scale(0.75);
+  transform: translateX(80px) scale(0.75);
+}
+section:hover #Youtube {
+  opacity: 1 !important;
+  transform: translateX(240px) scale(0.75);
 }
 
 svg {
