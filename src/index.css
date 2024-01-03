@@ -44,25 +44,119 @@ section {
   transition: all 0.25s ease-in-out;
 }
 
-section:hover {
-  width: 540px;
+@media (min-width: 540px) {
+  section:hover {
+    width: 520px;
+  }
+
+  section:hover #Google {
+    opacity: 1 !important;
+    transform: translateX(-230px) scale(0.75);
+  }
+  section:hover #Bing {
+    opacity: 1 !important;
+    transform: translateX(-75px) scale(0.75);
+  }
+  section:hover #Duck {
+    opacity: 1 !important;
+    transform: translateX(75px) scale(0.75);
+  }
+  section:hover #Youtube {
+    opacity: 1 !important;
+    transform: translateX(230px) scale(0.75);
+  }
 }
 
-section:hover #Google {
-  opacity: 1 !important;
-  transform: translateX(-240px) scale(0.75);
+@media (max-width: 540px) {
+  section:hover {
+    width: 100%;
+  }
+
+  section:hover #Google {
+    opacity: 1 !important;
+    transform: translateX(-200px) scale(0.75);
+  }
+  section:hover #Bing {
+    opacity: 1 !important;
+    transform: translateX(-60px) scale(0.75);
+  }
+  section:hover #Duck {
+    opacity: 1 !important;
+    transform: translateX(60px) scale(0.75);
+  }
+  section:hover #Youtube {
+    opacity: 1 !important;
+    transform: translateX(200px) scale(0.75);
+  }
 }
-section:hover #Bing {
-  opacity: 1 !important;
-  transform: translateX(-80px) scale(0.75);
+
+@media (max-width: 480px) {
+  section:hover {
+    width: 100%;
+  }
+
+  section:hover #Google {
+    opacity: 1 !important;
+    transform: translateX(-160px) scale(0.75);
+  }
+  section:hover #Bing {
+    opacity: 1 !important;
+    transform: translateX(-45px) scale(0.75);
+  }
+  section:hover #Duck {
+    opacity: 1 !important;
+    transform: translateX(45px) scale(0.75);
+  }
+  section:hover #Youtube {
+    opacity: 1 !important;
+    transform: translateX(160px) scale(0.75);
+  }
 }
-section:hover #Duck {
-  opacity: 1 !important;
-  transform: translateX(80px) scale(0.75);
+
+@media (max-width: 420px) {
+  section:hover {
+    width: 100%;
+  }
+
+  section:hover #Google {
+    opacity: 1 !important;
+    transform: translateX(-120px) scale(0.75);
+  }
+  section:hover #Bing {
+    opacity: 1 !important;
+    transform: translateX(-35px) scale(0.75);
+  }
+  section:hover #Duck {
+    opacity: 1 !important;
+    transform: translateX(35px) scale(0.75);
+  }
+  section:hover #Youtube {
+    opacity: 1 !important;
+    transform: translateX(120px) scale(0.75);
+  }
 }
-section:hover #Youtube {
-  opacity: 1 !important;
-  transform: translateX(240px) scale(0.75);
+
+@media (max-width: 360px) {
+  section:hover {
+    width: 100%;
+  }
+
+  section:hover #Google {
+    opacity: 1 !important;
+    transform: translateX(-100px) scale(0.7);
+  }
+  section:hover #Bing {
+    opacity: 1 !important;
+    transform: translateX(-30px) scale(0.7);
+  }
+  section:hover #Duck {
+    opacity: 1 !important;
+    transform: translateX(30px) scale(0.7);
+  }
+  section:hover #Youtube {
+    opacity: 1 !important;
+    transform: translateX(100px) scale(0.7);
+  }
 }
 
 svg {
