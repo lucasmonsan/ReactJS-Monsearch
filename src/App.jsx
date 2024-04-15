@@ -8,7 +8,7 @@ import {
 } from "./assets/icons/Icons"
 
 function App() {
-  const [chosen, setChosen] = useState("duck")
+  const [chosen, setChosen] = useState("google")
   const [input, setInput] = useState("")
 
   document.addEventListener("keydown", (event) => {
